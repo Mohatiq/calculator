@@ -1,0 +1,82 @@
+body {
+    background-color: #1e1e1e; /* dark tech background */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f5f5dc; /* beige text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  #calculator {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+  }
+  
+  #display {
+    background: #111;
+    color: #f5f5dc;
+    font-size: 2em;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: right;
+    margin-bottom: 15px;
+  }
+  
+  #button-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  button {
+    background: #333;
+    color: #f5f5dc;
+    border: none;
+    padding: 20px;
+    font-size: 1.3em;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+  }
+  
+  button:hover {
+    background: #444;
+    transform: scale(1.05);
+  }
+  
+  .op {
+    background: #3e3e3e;
+  }
+  
+  .clear, .restart {
+    background: #7a4c4c;
+  }
+  
+  .equal {
+    grid-column: 1 / -1; /* spans all columns */
+    background: #d4b483;
+    color: #111;
+    font-weight: bold;
+  }
+  
+  footer {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  footer h1 {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+  }
+  
+  .signature {
+    font-family: "Brush Script MT", cursive;
+    font-size: 0.9em;
+    color: #d4b483;
+  }
+  
