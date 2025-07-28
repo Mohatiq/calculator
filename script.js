@@ -36,6 +36,7 @@ function operate(number1, number2, operator) {
             return "Invalid Operator";
     }
 }
+
 digitButtons.forEach(button => {
     button.addEventListener('click', () => {
         const digit = button.textContent;
@@ -43,10 +44,16 @@ digitButtons.forEach(button => {
         display.textContent = currentInput;
     });
 });
+
 operatorButtons.forEach(button => {
     button.addEventListener('click', () => {
         const oper = button.textContent;
+        // Only allow operator selection if there is a current input or number1 already set
         if (validoperator.includes(oper)) {
+            if (currentInput === "" && number1 === "") {
+                // Prevent operator on empty input (no error message)
+                return;
+            }
             if (number1 === "") {
                 number1 = currentInput;
                 operator = oper;
@@ -64,8 +71,6 @@ operatorButtons.forEach(button => {
                 operator = oper;
                 display.textContent = oper;
             }
-        } else {
-            display.textContent = "PLEASE INSERT AN OPERATOR";
         }
     });
 });
@@ -90,6 +95,9 @@ equalButton.addEventListener('click', () => {
         currentInput = "";
         operator = "";
         number2 = "";
+    } else if (number1 === "" && currentInput === "") {
+        // Do nothing if everything is empty (i.e., after reset)
+        return;
     } else {
         display.textContent = "Your operation is incomplete!!";
     }
