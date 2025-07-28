@@ -1,1 +1,1 @@
-This is a calculator project done while studying web dev.I used Chat-GPT for the styling of the page since i am not a fan of designig web pages and i also used it to help solves some logic bugs in my script.js code
+This is a calculator project I created while studying web development. I used ChatGPT for the styling of the page since I’m not a fan of designing web pages, and I also used it to help solve some logic bugs in my script.js code
