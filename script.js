@@ -38,17 +38,20 @@ function operate(number1, number2, operator) {
 }
 function clearCalculator() {
     if (currentInput.length > 0) {
-        // Delete last digit from current input
+        // Backspace last digit of current input
         currentInput = currentInput.slice(0, -1);
         display.textContent = currentInput || "0";
     } else if (operator !== "") {
-        // Remove operator if no digits left in current input
+        // Remove operator if input is empty
         operator = "";
         display.textContent = number1 || "0";
     } else if (number1.length > 0) {
-        // Optional: allow backspacing number1
+        // Backspace last digit of number1
         number1 = number1.slice(0, -1);
         display.textContent = number1 || "0";
+    } else {
+        // If everything is empty, show 0
+        display.textContent = "0";
     }
 }
 
