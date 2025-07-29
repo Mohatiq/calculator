@@ -40,18 +40,18 @@ function clearCalculator() {
     if (currentInput.length > 0) {
         // Backspace last digit of current input
         currentInput = currentInput.slice(0, -1);
-        display.textContent = currentInput || "0";
+        display.textContent = currentInput || "";
     } else if (operator !== "") {
         // Remove operator if input is empty
         operator = "";
-        display.textContent = number1 || "0";
+        display.textContent = number1 || "";
     } else if (number1.length > 0) {
         // Backspace last digit of number1
         number1 = number1.slice(0, -1);
-        display.textContent = number1 || "0";
+        display.textContent = number1 || "";
     } else {
         // If everything is empty, show 0
-        display.textContent = "0";
+        display.textContent = "";
     }
 }
 
