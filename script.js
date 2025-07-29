@@ -36,6 +36,21 @@ function operate(number1, number2, operator) {
             return "Invalid Operator";
     }
 }
+function clearCalculator() {
+    if (currentInput.length > 0) {
+        // Delete last digit from current input
+        currentInput = currentInput.slice(0, -1);
+        display.textContent = currentInput || "0";
+    } else if (operator !== "") {
+        // Remove operator if no digits left in current input
+        operator = "";
+        display.textContent = number1 || "0";
+    } else if (number1.length > 0) {
+        // Optional: allow backspacing number1
+        number1 = number1.slice(0, -1);
+        display.textContent = number1 || "0";
+    }
+}
 
 digitButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -83,7 +98,7 @@ function resetCalculator() {
     display.textContent = "0";
 }
 
-clearButton.addEventListener('click', resetCalculator);
+clearButton.addEventListener('click', clearCalculator);
 refreshButton.addEventListener('click', resetCalculator);
 
 equalButton.addEventListener('click', () => {
